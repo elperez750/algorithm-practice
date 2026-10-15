@@ -8,7 +8,7 @@
 State print_possible_moves(State *moves) {
     for (int i =0; i < 6; i++) {
         for (int j = 0; j < 3; j++) {
-            printf("Tahis is the current move at %d: %d \n", i,  moves[i].water[j]);
+            printf("This is the current move at %d: %d \n", i,  moves[i].water[j]);
         }
     }
 }
@@ -61,10 +61,6 @@ void three_jugs_problem(State *initial) {
 
 
 
-
-    // TODO 5: Add the initial state to the queue.
-    // TODO 6: Mark the initial state as visited.
-
     // Time to finally get coding and into the logic.
 
     // Lets detail the logic
@@ -75,6 +71,8 @@ void three_jugs_problem(State *initial) {
      *Another rule is if the current that we are looking at can be emptied, we can make the move
      *
      */
+
+
     State moves[6];
     State *current = initial;
     while (front != rear) {
@@ -88,12 +86,12 @@ void three_jugs_problem(State *initial) {
                 queue[rear++] = moves[i];
             }
             for (int j = 0; j < 3; j++) {
-
                 printf("This is the current move at %d: %d \n", i,  moves[i].water[j]);
+
             }
         }
+        current = &queue[front++];
 
-        queue[front ++];
     }
 
 };
